@@ -1,0 +1,505 @@
+1. Home Page (index.html)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .top-frame {
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        .left-frame {
+            width: 200px;
+            background-color: #e1e1e1;
+            padding: 20px;
+            height: 500px;
+            box-sizing: border-box;
+        }
+        .left-frame a {
+            display: block;
+            margin-bottom: 10px;
+            color: #000;
+            text-decoration: none;
+        }
+        .right-frame {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .frame-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-frame">
+        <div class="logo">Online Book Store</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="left-frame">
+            <a href="javascript:loadCatalogue('CSE')">CSE</a>
+            <a href="javascript:loadCatalogue('ECE')">ECE</a>
+            <a href="javascript:loadCatalogue('EEE')">EEE</a>
+            <a href="javascript:loadCatalogue('CIVIL')">CIVIL</a>
+        </div>
+
+        <div class="right-frame">
+            <div class="frame-title">Description of the Website</div>
+            <p>Welcome to the Online Book Store! Browse through various categories of books and find your next read. You can also login, register, view the catalogue, and add items to your cart.</p>
+        </div>
+    </div>
+
+    <script>
+        function loadCatalogue(category) {
+            document.querySelector('.right-frame').innerHTML = `<h3>${category} Books</h3><p>Loading ${category} Books...</p>`;
+        }
+    </script>
+</body>
+</html>
+
+2. Login Page (login.html)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .top-frame {
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .form-container {
+            width: 300px;
+            background-color: #e1e1e1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-frame">
+        <div class="logo">Online Book Store</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Login</h2>
+            <form action="#">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+3. Catalogue Page (catalogue.html)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .top-frame {
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .catalogue-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .catalogue-table, .catalogue-table th, .catalogue-table td {
+            border: 1px solid #ddd;
+        }
+        .catalogue-table th, .catalogue-table td {
+            padding: 8px;
+            text-align: center;
+        }
+        .catalogue-table img {
+            width: 100px;
+        }
+        .top-frame nav a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-frame">
+        <div class="logo">Online Book Store</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <table class="catalogue-table">
+            <tr>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Price</th>
+                <th>Cover</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>XML Bible</td>
+                <td>Winston</td>
+                <td>Wiley</td>
+                <td>Rs 40.5</td>
+                <td><img src="book1.jpg" alt="XML Bible"></td>
+                <td><button>Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>AI</td>
+                <td>S. Russell</td>
+                <td>Princeton Hall</td>
+                <td>Rs 63</td>
+                <td><img src="book2.jpg" alt="AI"></td>
+                <td><button>Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>Java 2</td>
+                <td>Watson</td>
+                <td>BPB Publications</td>
+                <td>Rs 35.5</td>
+                <td><img src="book3.jpg" alt="Java 2"></td>
+                <td><button>Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>HTML in 24 hours</td>
+                <td>Sam Peter</td>
+                <td>Sam Publications</td>
+                <td>Rs 50</td>
+                <td><img src="book4.jpg" alt="HTML in 24 hours"></td>
+                <td><button>Add to Cart</button></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
+
+1. Cart Page (cart.html)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .top-frame {
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .form-container {
+            width: 400px;
+            background-color: #e1e1e1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+        .form-container label {
+            font-weight: bold;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-frame">
+        <div class="logo">Online Book Store</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Registration Form</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="email">E-mail ID:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label>Sex:</label>
+                <input type="radio" id="male" name="sex" value="male"> Male
+                <input type="radio" id="female" name="sex" value="female"> Female
+
+                <label for="dob">Date of Birth:</label>
+                <select name="day" id="day">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <!-- Add more days as required -->
+                </select>
+                <select name="month" id="month">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <!-- Add more months as required -->
+                </select>
+                <select name="year" id="year">
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <!-- Add more years as required -->
+                </select>
+
+                <label for="languages">Languages Known:</label>
+                <input type="checkbox" id="english" name="languages" value="English"> English
+                <input type="checkbox" id="telugu" name="languages" value="Telugu"> Telugu
+                <input type="checkbox" id="hindi" name="languages" value="Hindi"> Hindi
+                <input type="checkbox" id="tamil" name="languages" value="Tamil"> Tamil
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+2. Registration Page (registration.html)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .top-frame {
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .form-container {
+            width: 400px;
+            background-color: #e1e1e1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+        .form-container label {
+            font-weight: bold;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-frame">
+        <div class="logo">Online Book Store</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="registration.html">Registration</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Registration Form</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="email">E-mail ID:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label>Sex:</label>
+                <input type="radio" id="male" name="sex" value="male"> Male
+                <input type="radio" id="female" name="sex" value="female"> Female
+
+                <label for="dob">Date of Birth:</label>
+                <select name="day" id="day">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <!-- Add more days as required -->
+                </select>
+                <select name="month" id="month">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <!-- Add more months as required -->
+                </select>
+                <select name="year" id="year">
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <!-- Add more years as required -->
+                </select>
+
+                <label for="languages">Languages Known:</label>
+                <input type="checkbox" id="english" name="languages" value="English"> English
+                <input type="checkbox" id="telugu" name="languages" value="Telugu"> Telugu
+                <input type="checkbox" id="hindi" name="languages" value="Hindi"> Hindi
+                <input type="checkbox" id="tamil" name="languages" value="Tamil"> Tamil
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
